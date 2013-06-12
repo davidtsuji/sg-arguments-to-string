@@ -1,0 +1,17 @@
+{
+	"name": "sgArgumentsToString",
+	"description": "Convert JavaScript function arguments to a string",
+	"repo": "davidtsuji/sgArgumentsToString",
+	"version": "0.0.1",
+	"main": "index.js",
+	"scripts": [
+
+		"index.js"
+
+	],
+	"dependencies": {
+
+		"davidtsuji/underscore": "*"
+
+	}
+}

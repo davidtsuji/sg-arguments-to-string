@@ -1,0 +1,1 @@
+Convert JavaScript function arguments to a string
