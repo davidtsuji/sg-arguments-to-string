@@ -1,26 +1,23 @@
-var _ = require('underscore')
-
-window.sg = window['sg'] || {};
-
-window.sg.argumentsToString = function(){
+module.exports = function(_arguments){
 
 	var result = ''
 
-	_.each(arguments, function(_argument){
+	for (var i=0; i<_arguments.length; i++) {
 
 		var stringified
+		  , arg = _arguments[i]
 
 		switch(true) {
 
-			case typeof(_argument) == 'object':
+			case typeof(arg) == 'object':
 
-				stringified = JSON.stringify(_argument);
+				stringified = JSON.stringify(arg);
 
 			break;
 
 			default:
 			
-				stringified = _argument;
+				stringified = arg;
 
 			break;
 
@@ -28,7 +25,7 @@ window.sg.argumentsToString = function(){
 
 		result = result + stringified;
 
-	});
+	};
 
 	return result;
 
