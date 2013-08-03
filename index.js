@@ -1,11 +1,21 @@
-module.exports = function(_arguments){
+var type = require('type');
+
+module.exports = function(){
 
 	var argumentsStringified = ''
 
-	try {
-		argumentsStringified = JSON.stringify(_arguments);
-	} catch(e) {
-		argumentsStringified = Math.random().toString(35).substring(2, 12);
+	for (var i=0; i<arguments.length; i++) {
+
+		if (type(arguments[i]) == 'function' || type(arguments[i]) == 'regexp') {
+
+			argumentsStringified = argumentsStringified + arguments[i].toString();
+
+		} else {
+
+			argumentsStringified = argumentsStringified + JSON.stringify(arguments[i])
+
+		}
+
 	}
 
 	return argumentsStringified;

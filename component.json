@@ -7,5 +7,7 @@
 	"scripts": [
 		"index.js"
 	],
-	"dependencies": {}
+	"dependencies": {
+		"component/type": "*"
+	}
 }
