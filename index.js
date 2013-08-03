@@ -1,32 +1,13 @@
 module.exports = function(_arguments){
 
-	var result = ''
+	var argumentsStringified = ''
 
-	for (var i=0; i<_arguments.length; i++) {
+	try {
+		argumentsStringified = JSON.stringify(_arguments);
+	} catch(e) {
+		argumentsStringified = Math.random().toString(35).substring(2, 12);
+	}
 
-		var stringified
-		  , arg = _arguments[i]
-
-		switch(true) {
-
-			case typeof(arg) == 'object':
-
-				stringified = JSON.stringify(arg);
-
-			break;
-
-			default:
-			
-				stringified = arg;
-
-			break;
-
-		}
-
-		result = result + stringified;
-
-	};
-
-	return result;
+	return argumentsStringified;
 
 }
